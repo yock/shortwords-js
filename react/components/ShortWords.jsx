@@ -1,9 +1,11 @@
 import React from 'react';
-import WordList from './WordList';
+import FilteredWordList from './FilteredWordList';
+import ConnectedSearch from './ConnectedSearch';
 
 const ShortWords = () => (
   <div className="container">
-    <WordList />
+    <ConnectedSearch />
+    <FilteredWordList />
   </div>
 );
 

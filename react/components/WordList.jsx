@@ -1,10 +1,19 @@
 import React from 'react';
-import { words } from '../data/words.json';
+import PropTypes from 'prop-types';
+import Word from './Word';
 
-const WordList = () => (
+const WordList = ({ words }) => (
   <ul className="wordlist">
-    {words.map(word => <li className="wordlist__word" key={word}>{word}</li>)}
+    {words.map(word => (
+      <li key={word}>
+        <Word text={word} />
+      </li>
+    ))}
   </ul>
 );
+
+WordList.propTypes = {
+  words: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default WordList;
